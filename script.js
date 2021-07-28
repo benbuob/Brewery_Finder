@@ -32,19 +32,70 @@ const getBreweries = function (latitude, longitude) {
     // console.log(this.responseText);                // same as request.responseText
 
     //puuting [] around data will destructure and return only one brewery.
-    const [data] = JSON.parse(this.responseText); //destructuring to get object, otherwise its an array with one object
+    const data = JSON.parse(this.responseText); //destructuring to get object, otherwise its an array with one object
     console.log(data);
 
     const html = `<article class="brew">
-                <h2>Brewery Near You!</h2>
-                <h3 class="brew__name">Name: ${data.name}</h3>
-                <h3 class="brew__street">Address: ${data.street}</h3>
-                <h3 class="brew__type">Brewery type: ${data.brewery_type}</h3>
-                <h3 class="brew__website">Brewery website: ${data.website_url}</h3>
-                <h3 class="brew__country">Country: ${data.country}</h3>
-                <h3 class="brew__state">State: ${data.state}</h3>
-                <h3 class="brew__city">City: ${data.city}</h3>
-            </article>`;
+                <h2 class="brew__name">${data[0].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[0].street}, ${data[0].city}</h4>
+                <h4 class="brew__website"><a href="${data[0].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+            
+            <article class="brew">
+                <h2 class="brew__name">${data[1].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[1].street}, ${data[1].city}</h4>
+                <h4 class="brew__website"><a href="${data[1].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+
+            <article class="brew">
+                <h2 class="brew__name">${data[2].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[2].street}, ${data[2].city}</h4>
+                <h4 class="brew__website"><a href="${data[2].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+
+            <article class="brew">
+                <h2 class="brew__name">${data[3].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[3].street}, ${data[3].city}</h4>
+                <h4 class="brew__website"><a href="${data[3].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+
+            <article class="brew">
+                <h2 class="brew__name">${data[4].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[4].street}, ${data[4].city}</h4>
+                <h4 class="brew__website"><a href="${data[4].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+
+            <article class="brew">
+                <h2 class="brew__name">${data[5].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[5].street}, ${data[5].city}</h4>
+                <h4 class="brew__website"><a href="${data[5].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+
+            <article class="brew">
+                <h2 class="brew__name">${data[6].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[6].street}, ${data[6].city}</h4>
+                <h4 class="brew__website"><a href="${data[6].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+
+            <article class="brew">
+                <h2 class="brew__name">${data[7].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[7].street}, ${data[7].city}</h4>
+                <h4 class="brew__website"><a href="${data[7].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+
+            <article class="brew">
+                <h2 class="brew__name">${data[8].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[8].street}, ${data[8].city}</h4>
+                <h4 class="brew__website"><a href="${data[8].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+
+            <article class="brew">
+                <h2 class="brew__name">${data[9].name} <i class="fas fa-beer"></i></h2>
+                <h4 class="brew__street">Address: ${data[9].street}, ${data[9].city}</h4>
+                <h4 class="brew__website"><a href="${data[9].website_url}" target="_blank">Visit Website</a></h4>
+            </article>
+            
+            `;
 
     breweries.insertAdjacentHTML("beforeend", html);
   });
